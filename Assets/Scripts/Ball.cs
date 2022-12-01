@@ -6,11 +6,11 @@ using UnityEngine.Serialization;
 
 public class Ball : MonoBehaviour
 {
-    [FormerlySerializedAs("rigidbody2D")] [SerializeField] private Rigidbody2D rb;
+     private Rigidbody2D rb;
 
-    private void OnEnable()
+    private void Awake()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
     }
     
 
@@ -19,7 +19,7 @@ public class Ball : MonoBehaviour
     void Start()
     {
         //add initial force
-        rb.AddForce(Vector2.down*power);
+        rb.AddForce(Vector2.one*power);
     }
 
     private void Update()
