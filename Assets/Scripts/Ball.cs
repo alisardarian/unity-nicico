@@ -16,7 +16,7 @@ public class Ball : MonoBehaviour
 
     [SerializeField] private float power;
     // Start is called before the first frame update
-    void Start()
+    public void AddForceBall()
     {
         //add initial force
         rb.AddForce(Vector2.one*power);

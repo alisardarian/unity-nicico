@@ -11,7 +11,7 @@ public class GameOver : MonoBehaviour
 
     private void Start()
     {
-        finalScore.text = GameManager.Score.ToString();
+        finalScore.text = GameManager.TotalScore.ToString();
     }
 
     public void OnButtonClick()
