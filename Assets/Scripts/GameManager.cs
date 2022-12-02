@@ -6,6 +6,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
+using Random = UnityEngine.Random;
 
 public class GameManager : MonoBehaviour
 {
@@ -18,6 +20,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TMP_Text tmpCounter;
 
     public List<Brick> _bricks;
+
+    [SerializeField] private AudioSource breakSfx;
 
     private Ball _ball;
     private void Awake()
@@ -53,6 +57,8 @@ public class GameManager : MonoBehaviour
 
     public void OnBrickDestroy(Brick brick)
     {
+        breakSfx.pitch = Random.Range(0.5F, 2F);
+        breakSfx.Play();
         _bricks.Remove(brick);
         Score++;
         TotalScore++;
