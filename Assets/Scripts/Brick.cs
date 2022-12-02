@@ -7,7 +7,7 @@ public class Brick : MonoBehaviour
 {
     private void OnCollisionEnter2D(Collision2D col)
     {
-        GameManager.Instance.OnBrickDestroy();
+        GameManager.Instance.OnBrickDestroy(this);
         Destroy(gameObject);
     }
 }
